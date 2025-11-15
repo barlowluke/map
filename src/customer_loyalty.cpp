@@ -11,7 +11,7 @@ std::map<int, std::string> createLoyaltyTiers() {
 std::string getLoyaltyTier(const std::map<int, std::string>& tiers, int score) {
     // returns first element greater than or equal to 
     auto it = tiers.lower_bound(score);
-    if (it->first != score || it != tiers.begin() || it != tiers.end()) {
+    if (it->first != score) {
         it--;
     }
     return it->second;

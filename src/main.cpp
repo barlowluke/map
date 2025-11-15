@@ -1,6 +1,3 @@
-//ecommerce_analytics
-//main.cpp
-
 #include "api_monitor.hpp"
 #include "box_optimizer.hpp"
 #include "cart_analysis.hpp"

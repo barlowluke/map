@@ -1,7 +1,6 @@
 #include <unordered_map>
-#include <vector>
-#include <string>
 #include <algorithm>
+#include "cart_analysis.hpp"
 
 std::vector<std::string> commonProductsAcrossCarts(const std::vector<std::vector<std::string>>& carts) {
     std::unordered_map<std::string, int> u;

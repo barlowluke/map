@@ -1,5 +1,5 @@
-#include <vector>
 #include <unordered_map>
+#include "box_optimizer.hpp"
 
 std::pair<int, int> findItemsForBox(const std::vector<int>& item_weights, int box_capacity) {
     std::unordered_map<int, int> u;
@@ -9,10 +9,12 @@ std::pair<int, int> findItemsForBox(const std::vector<int>& item_weights, int bo
         remaining = box_capacity - item_weights[i];
         if (u.contains(remaining)) {
             int index = u.at(remaining);
-            return std::pair<int, int> p(index, i);
+            std::pair<int, int> p(index, i);
+            return p;
         } else {
-            u.insert({remaining,i});
+            u.insert({item_weights[i], i});
         }
     }
-    return std::pair<int, int> p(-1, -1);
+    std::pair<int, int> p(-1, -1);
+    return p;
 }
